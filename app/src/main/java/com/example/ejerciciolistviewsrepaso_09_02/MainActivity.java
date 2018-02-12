@@ -7,6 +7,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,15 +38,19 @@ public class MainActivity extends AppCompatActivity {
         AdaptadorJugadores adaptadorJugadores = new AdaptadorJugadores(this,lista_jugadores);
         lvjugadoreshistoricos.setAdapter(adaptadorJugadores);
 
-        lvjugadoreshistoricos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvjugadoreshistoricos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Jugadorhistorico c =((Jugadorhistorico)parent.getItemAtPosition(position));
+                Toast.makeText(getApplicationContext(),c.getNombrejugador()+(" ")+c.getDorsal()+(" ")+c.getTemporadas()+(""),Toast.LENGTH_LONG).show();
+
+                return false;
 
             }
         });
 
         lvjugadoreshistoricos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Jugadorhistorico jugadorhistorico =((Jugadorhistorico)parent.getItemAtPosition(position));
                 String nombrejugador = jugadorhistorico.getNombrejugador();

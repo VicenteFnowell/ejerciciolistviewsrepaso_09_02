@@ -10,42 +10,48 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
+        android:background="@drawable/celticscabecera"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imagenjug"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="240dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/nombre"
-                android:fontFamily="@font/fuentebasket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NOMBRE: " />
+                android:fontFamily="@font/fuentebasket"
+                android:text="NOMBRE: "
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/dorsal"
-                android:fontFamily="@font/fuentebasket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DORSAL: " />
+                android:fontFamily="@font/fuentebasket"
+                android:text="DORSAL: "
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/temporadas"
-                android:fontFamily="@font/fuentebasket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TEMPORADAS: " />
+                android:fontFamily="@font/fuentebasket"
+                android:text="TEMPORADAS: "
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 
@@ -54,7 +60,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Históricos de Boston Celtics"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:textColor="@color/colortextotitulo"
+        android:background="@drawable/estilotitulo"
+        android:shadowColor="@color/colorsombra"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/lvceltics"
